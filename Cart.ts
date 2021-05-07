@@ -27,8 +27,8 @@ routes.get("/cart-items", (req, res) => {
         item => item.product.toLowerCase().includes(prefix));
   }
   if (pageSize) {
-      let index = cartItems.length - pageSize;
-      results = results.splice(index);
+      //let index = cartItems.length - pageSize;
+      results = results.slice(0, pageSize);
   }
   res.json(results);
 });
